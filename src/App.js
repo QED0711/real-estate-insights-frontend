@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './App.css';
 import MapContainer from './components/MapContainer';
 import YearInterface from './components/YearInterface';
+import TitleHeading from './components/TitleHeading';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -9,24 +11,12 @@ function App() {
 
   return (
     <div className="App">
-      <header className="title-heading">
-        <h3>How have D.C. home prices changed since 2000?</h3>
-        <p>Median home value by year separated by zipcode*</p>
-      </header>
+      <TitleHeading />
       <MapContainer currentMap={currentMap} />
       
       <YearInterface currentMap={currentMap} setCurrentMap={setCurrentMap}/>
       
-      <footer className="notes-footer">
-        <div className='notes'>
-          <p>*zipcode omitted when data not collected for that year</p>
-        </div>
-
-        <div className="citation">
-          <p className="author-footer">Quinn Dizon</p>
-          <p className="source-footer">Source: <a href="https://www.zillow.com/research/data/" target="_blank">Zillow economic data</a></p>
-        </div>
-      </footer>
+      <Footer />
     </div >
   );
 }
